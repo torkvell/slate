@@ -1,0 +1,2462 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Usabilla API Documentation</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;javascript&quot;,&quot;python&quot;,&quot;go&quot;,&quot;php&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">Node.js</a>
+              <a href="#" data-language-name="python">Python</a>
+              <a href="#" data-language-name="go">Go</a>
+              <a href="#" data-language-name="php">PHP</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#1-create-a-canonical-request" class="toc-h2 toc-link" data-title="1. Create a Canonical Request">1. Create a Canonical Request</a>
+                  </li>
+                  <li>
+                    <a href="#2-create-a-string-to-sign" class="toc-h2 toc-link" data-title="2. Create a String to Sign">2. Create a String to Sign</a>
+                  </li>
+                  <li>
+                    <a href="#3-calculate-the-signature" class="toc-h2 toc-link" data-title="3. Calculate the Signature">3. Calculate the Signature</a>
+                  </li>
+                  <li>
+                    <a href="#4-signing-the-request" class="toc-h2 toc-link" data-title="4. Signing the Request">4. Signing the Request</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#request-url-structure" class="toc-h1 toc-link" data-title="Request URL structure">Request URL structure</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#parameters" class="toc-h2 toc-link" data-title="Parameters">Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#success-200" class="toc-h2 toc-link" data-title="Success 200">Success 200</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#403" class="toc-h2 toc-link" data-title="403">403</a>
+                  </li>
+                  <li>
+                    <a href="#404" class="toc-h2 toc-link" data-title="404">404</a>
+                  </li>
+                  <li>
+                    <a href="#429" class="toc-h2 toc-link" data-title="429">429</a>
+                  </li>
+                  <li>
+                    <a href="#500" class="toc-h2 toc-link" data-title="500">500</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#usabilla-for-websites" class="toc-h1 toc-link" data-title="Usabilla for Websites">Usabilla for Websites</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#feedback-button" class="toc-h2 toc-link" data-title="Feedback Button">Feedback Button</a>
+                  </li>
+                  <li>
+                    <a href="#get-buttons" class="toc-h2 toc-link" data-title="Get Buttons">Get Buttons</a>
+                  </li>
+                  <li>
+                    <a href="#get-feedback-items" class="toc-h2 toc-link" data-title="Get Feedback Items">Get Feedback Items</a>
+                  </li>
+                  <li>
+                    <a href="#campaigns" class="toc-h2 toc-link" data-title="Campaigns">Campaigns</a>
+                  </li>
+                  <li>
+                    <a href="#get-campaigns" class="toc-h2 toc-link" data-title="Get Campaigns">Get Campaigns</a>
+                  </li>
+                  <li>
+                    <a href="#get-campaign-results" class="toc-h2 toc-link" data-title="Get Campaign Results">Get Campaign Results</a>
+                  </li>
+                  <li>
+                    <a href="#get-campaign-statistics" class="toc-h2 toc-link" data-title="Get Campaign Statistics">Get Campaign Statistics</a>
+                  </li>
+                  <li>
+                    <a href="#in-page" class="toc-h2 toc-link" data-title="In-Page">In-Page</a>
+                  </li>
+                  <li>
+                    <a href="#get-in-page-widgets" class="toc-h2 toc-link" data-title="Get In-Page Widgets">Get In-Page Widgets</a>
+                  </li>
+                  <li>
+                    <a href="#get-in-page-feedback" class="toc-h2 toc-link" data-title="Get In-Page Feedback">Get In-Page Feedback</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#usabilla-for-email" class="toc-h1 toc-link" data-title="Usabilla for Email">Usabilla for Email</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-email-widgets" class="toc-h2 toc-link" data-title="Get Email Widgets">Get Email Widgets</a>
+                  </li>
+                  <li>
+                    <a href="#get-email-feedback" class="toc-h2 toc-link" data-title="Get Email Feedback">Get Email Feedback</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#usabilla-for-apps" class="toc-h1 toc-link" data-title="Usabilla for Apps">Usabilla for Apps</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-app-forms" class="toc-h2 toc-link" data-title="Get App Forms">Get App Forms</a>
+                  </li>
+                  <li>
+                    <a href="#get-form-feedback" class="toc-h2 toc-link" data-title="Get Form Feedback">Get Form Feedback</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href="mailto:support@usabilla.com">Contact Usabilla Support</a></li>
+            <li><a href="https://app.usabilla.com/">Usabilla Login Portal</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Usabilla API documentation. Here you will find a detailed guide on how to access the data related to your customers feedback.</p>
+
+<p>You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right. On top of this, we&#39;ve also included our
+client repositories we have on GitHub.</p>
+
+<p>Usabilla maintains the following client libraries:</p>
+
+<ul>
+<li><a href="https://github.com/usabilla/api-php">Usabilla API PHP Client</a></li>
+<li><a href="https://github.com/usabilla/api-python">Usabilla API Python Client</a></li>
+<li><a href="https://github.com/usabilla/api-go">Usabilla API Go Client</a></li>
+<li><a href="https://github.com/usabilla/api-js-node">Usabilla API Node.js Client</a></li>
+</ul>
+
+<p>Client libraries by third parties:</p>
+
+<ul>
+<li><a href="https://github.com/JMolinaro/usabilla_api">Usabilla API Ruby On Rails Client - maintained by Jon Molinaro (CareerBuilder.com)</a></li>
+<li><a href="https://github.com/LexerZz/usabilla_api/blob/master/usabilla_api.sh">Usabilla API Shell Script - maintained by Alexander Vellekoop (Aegon.nl)</a></li>
+</ul>
+
+<p>If you wrote a public client library that would be beneficial to fellow coders, we would love to hear about it and include it in our documentation, please send us a link to your project repository.</p>
+
+<p>If you prefer to use a language we do not provide a client library for you can continue to the next section to see how our authentication method works. Please contact <a href="mailto:support@usabilla.com">support</a> if you need help calling our API.</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>The authentication code for each language can be found under the respective GitHub pages:<br>
+<a href="https://github.com/usabilla/api-php">GitHub - PHP Client</a><br>
+<a href="https://github.com/usabilla/api-python">GitHub - Python Client</a><br>
+<a href="https://github.com/usabilla/api-go">GitHub - Go Client</a><br>
+<a href="https://github.com/usabilla/api-js-node">GitHub - Node.js Client</a><br>
+<a href="https://github.com/JMolinaro/usabilla_api">GitHub - Ruby On Rails Client</a><br>
+<a href="https://github.com/LexerZz/usabilla_api/blob/master/usabilla_api.sh">GitHub - Shell Script</a><br></p>
+</blockquote>
+
+<p>The credentials consist in an access and a secret key used for authentication purposes. You can acquire the credentials by logging into your Usabilla account and access the following <a href="https://app.usabilla.com/member/account/settings#public_api">link</a> or navigating to the settings menu under the tab Usabilla API. If you&#39;re new to the Usabilla API then we recommend you to read through our support article on <a href="https://support.usabilla.com/hc/en-us/articles/360019493372-Getting-Started-with-the-Usabilla-Public-API">Getting Started with the Usabilla Public API</a>.
+Our API authentication system is inspired by the <a href="http://docs.aws.amazon.com/general/latest/gr/sigv4_signing.html">AWS version 4</a> request signing process.</p>
+
+<ol>
+<li><a href="#1-create-a-canonical-request">Create a Canonical Request</a></li>
+<li><a href="#2-create-a-string-to-sign">Create a String to Sign</a></li>
+<li><a href="#3-calculate-the-signature">Calculate the Signature</a></li>
+<li><a href="#4-add-the-signing-information-to-the-request">Signing the Request</a></li>
+</ol>
+<h2 id='1-create-a-canonical-request'>1. Create a Canonical Request</h2>
+<p>To begin the signing process, you create a string that includes information from your request in a standardized (canonical) format. This step will allow you to create a canonical request string which will be used by our servers to verify the signed request.</p>
+
+<p>Follow the steps here to create a canonical version of the request. Otherwise, your version and the version calculated by our servers won&#39;t match, and the request will be denied.</p>
+
+<p>The following example shows the pseudocode to create a canonical request:</p>
+
+<p><code>
+CanonicalRequest =<br>
+HTTPRequestMethod + &#39;\n&#39; + <br>
+CanonicalURI + &#39;\n&#39; + <br>
+CanonicalQueryString + &#39;\n&#39; + <br>
+CanonicalHeaders + &#39;\n&#39; + <br>
+SignedHeaders + &#39;\n&#39; + <br>
+HexEncode(Hash(RequestPayload))
+</code></p>
+
+<p><strong>Example request</strong></p>
+
+<p>To show you how to construct the canonical form of an HTTP request, we&#39;ll use the following example request.
+The original request might look like this as it is sent from the client to our servers, except that this example does not include the signing information yet.</p>
+
+<p><code>
+    GET https://data.usabilla.com/ HTTP/1.1<br>
+    Host: data.usabilla.com<br>
+    Date: 20150830T123600Z
+</code></p>
+
+<p><strong>To create a canonical request, concatenate the following components from each step into a single string:</strong></p>
+
+<ol>
+<li><p>Start with the GET, HTTP request method written in upper case, followed by a newline character.
+Example request method:</p>
+
+<p><code>
+    GET
+</code></p></li>
+<li><p>Add the canonical URI parameter, followed by a newline character.</p>
+
+<p>If the absolute path is empty, use a forward slash (/). In the example request, nothing follows the host in the URI, so the absolute path is empty.</p>
+
+<p><strong>Example canonical URI:</strong></p>
+
+<p><code>
+    /button
+</code></p></li>
+<li><p>Add the canonical query string, followed by a newline character.</p>
+
+<p>If the request does not include a query string, use an empty string (essentially, a blank line). The example request does not contain a query string:</p>
+
+<p><strong>Example canonical query string:</strong></p>
+
+<p><code>
+    ?limit=1&amp;since=123456789
+</code></p>
+
+<p>To construct the canonical query string, complete the following steps:</p>
+
+<p>a. URI-encode each parameter name and value according to the following rules:</p>
+
+<p>*Do not URL-encode any of the unreserved characters that RFC 3986 defines: A-Z, a-z, 0-9, hyphen ( - ), underscore ( _ ), period ( . ), and tilde ( ~ ).</p>
+
+<p>*Percent-encode all other characters with %XY, where X and Y are hexadecimal characters (0-9 and uppercase A-F).</p>
+
+<p>b. Sort the encoded parameter names by character code.</p>
+
+<p>c. Build the canonical query string by starting with the first parameter name in the sorted list.</p>
+
+<p>d. For each parameter, append the URI-encoded parameter name, followed by the character &#39;=&#39; (ASCII code 61), followed by the URI-encoded parameter value. Use an empty string for parameters that have no value.</p>
+
+<p>e. Append the character &#39;&amp;&#39; (ASCII code 38) after each parameter value except for the last value in the list.</p>
+
+<p><strong>Example authentication parameters in a query string:</strong></p>
+
+<p>The following example shows a query string that includes authentication information.</p>
+
+<p><code>
+Algorithm=USBL1-HMAC-SHA256&amp;<br>
+Version=2010-05-08&amp;<br>
+Credential=AKIAIOSFODNN7EXAMPLE%2F20150112%2Fusbl1_request&amp;<br>
+Date=20150112T135139Z&amp;<br>
+SignedHeaders=date%3Bhost
+</code></p></li>
+<li><p>Add the canonical headers, followed by a newline character. The canonical headers consist of a list of all the HTTP headers. The required headers are host and date.</p>
+
+<p><strong>Example canonical headers:</strong></p>
+
+<p><code>
+host:data.usabilla.com\n<br>
+date:20150111T003735Z\n<br>
+</code></p>
+
+<p>To create the canonical headers list, convert all header names to lowercase and trim excess white space characters out of the header values. When you trim, remove leading spaces and trailing spaces, and convert sequential spaces in the value to a single space. However, do not remove extra spaces from any values that are inside quotation marks.</p>
+
+<p>The following pseudocode describes how to construct the canonical list of headers:</p>
+
+<p><code>
+CanonicalHeaders =<br>
+CanonicalHeadersEntry0 + CanonicalHeadersEntry1 + ... +<br>
+CanonicalHeadersEntryN <br>
+CanonicalHeadersEntry =<br>
+Lowercase(HeaderName) + &#39;:&#39; + Trimall(HeaderValue) + &#39;\n&#39;
+</code></p>
+
+<p>Lowercase represents a function that converts all characters to lowercase. The Trimall function removes excess white space before and after values and from inside non-quoted strings, per <a href="https://www.ietf.org/rfc/rfc2616.txt">RFC 2616</a> Section 4.2.</p>
+
+<p>Build the canonical headers list by iterating through the collection of header names and sorting the headers lowercase character code. Construct each header by using the following rules:</p>
+
+<p>Append the lowercase header name followed by a colon.</p>
+
+<p>Append a comma-separated list of values for that header. If there are duplicate headers, the values are comma-separated. Do not sort the values in headers that have multiple values.</p>
+
+<p>Append a new line (&#39;\n&#39;).</p>
+
+<p>The following two samples compare a more complex set of headers with their canonical form:</p>
+
+<p><strong>Example original headers:</strong></p>
+
+<p><code>
+host:data.usabilla.com\n<br>
+date:20150111T003735Z\n
+</code></p>
+
+<p><strong>Example canonical form:</strong></p>
+
+<p><code>
+date:20150111T003735Z\n<br>
+host:data.usabilla.com\n
+</code></p></li>
+<li><p>To create the signed headers list, convert all header names to lowercase, sort them by character code, and use a semicolon to separate the header names. The following pseudocode describes how to construct a list of signed headers. LOWERCASE represents a function that converts all characters to lowercase.</p>
+
+<p><code>
+SignedHeaders =<br>
+Lowercase(HeaderName0) + &#39;;&#39; + Lowercase(HeaderName1) + &quot;;&quot; <br> + ... + Lowercase(HeaderNameN)
+</code></p>
+
+<p>Build the signed headers list by iterating through the collection of header names, sorted by lowercase character code. For each header name except the last, append a semicolon (&#39;;&#39;) to the header name to separate it from the following header name.</p>
+
+<p>Only the host and date headers are required. Optionally if the users have added additional headers to the CanonicalHeaders these will also be required. Note: Certain API calls require additional headers to be present in the signed headers list.</p>
+
+<p><strong>Example request: Signed headers</strong></p>
+
+<p><code>
+host;date
+</code></p></li>
+<li><p>Use the hash (digest) function SHA256 and create a hashed value from the RequestPayload in the body of the HTTP or HTTPS request. Since none of the current API calls support a request body the RequestPayload must always be the empty string. Therefore the RequestPayload will always be the hexadecimal SHA-256 hash of an empty string.</p>
+
+<p><code>
+HashedPayload = Lowercase(HexEncode(Hash(requestPayload)))
+</code></p>
+
+<p><strong>Example request: RequestPayload</strong></p>
+
+<p><code>
+empty string
+</code></p>
+
+<p><strong>Example request: Hashed RequestPayload</strong></p>
+
+<p>The following example shows the result of using SHA-256 to hash the example RequestPayload.</p>
+
+<p><code>
+3511de7e95d28ecd39e9513b642aee07e54f4941150d8df8bf94b328ef7e55e2
+</code></p></li>
+<li><p>To construct the finished canonical request, combine all the components from each step as a single string. As noted, each component ends with a newline character. If you follow the canonical request pseudocode explained earlier, the resulting canonical request is shown in the following example:</p>
+
+<p><strong>Example canonical request:</strong></p>
+
+<p><code>
+GET<br>
+/live/website/button<br>
+date:Mon, 12 Jan 2015 13:57:54 GMT<br>
+host:data.usabilla.dev<br>
+date;host<br>
+3511de7e95d28ecd39e9513b642aee07e54f4941150d8df8bf94b328ef7e55e2
+</code></p></li>
+<li><p>Create a digest (hash) of the canonical request by using the same algorithm that you used to hash the RequestPayload. The hashed canonical request must be represented as a string of lowercase hexademical characters.</p>
+
+<p><strong>Example hashed canonical request:</strong></p>
+
+<p><code>
+3511de7e95d28ecd39e9513b642aee07e54f4941150d8df8bf94b328ef7e55e2
+</code></p></li>
+</ol>
+<h2 id='2-create-a-string-to-sign'>2. Create a String to Sign</h2>
+<p>The string to sign includes meta information about your request and about the canonical request. To create the string to sign, concatenate the algorithm, date, credential scope, and the digest of the canonical request, as shown in the following pseudocode:</p>
+
+<p><strong>Structure of the String to Sign:</strong></p>
+
+<p><code>
+StringToSign  = <br>
+Algorithm + <br>
+RequestDate + <br>
+CredentialScope + <br>
+HashedCanonicalRequest<br>
+</code></p>
+
+<p><strong>Example string to sign:</strong></p>
+
+<p><code>
+    USBL1-HMAC-SHA256<br>
+    20150112T135139Z<br>
+    20150112/usbl1_request<br>
+    daf6b02d8ae6809bf3b2445c480c1ee6038da1a19a2bd5ad21b7a30acd0fdec2
+</code></p>
+
+<p><strong>Example HTTPS request:</strong></p>
+
+<p><code>
+    GET<br>
+    /live/website/button<br>
+    date:Mon, 12 Jan 2015 13:57:54 GMT<br>
+    host:data.usabilla.dev<br>
+    date;host<br>
+    3511de7e95d28ecd39e9513b642aee07e54f4941150d8df8bf94b328ef7e55e2
+</code></p>
+
+<p><strong>To create the string to sign:</strong></p>
+
+<ol>
+<li><p>Start with the algorithm designation, followed by a newline character. This value is the hashing algorithm that you&#39;re using to calculate the digests in the canonical request.</p>
+
+<p><code>
+USBL1-HMAC-SHA256\n
+</code></p></li>
+<li><p>Append the request date value, followed by a newline character. The date is specified by using the ISO8601 Basic format via the Date header in the YYYYMMDD&#39;T&#39;HHMMSS&#39;Z&#39; format. This value must match the value you used in any previous steps.</p>
+
+<p><code>
+20150112T135139Z\n
+</code></p></li>
+<li><p>Append the credential scope value, followed by a newline character. This value is a string that includes the date and termination string (&quot;usbl1_request&quot;) in lowercase characters.</p>
+
+<p><code>
+20150112/usbl1_request\n
+</code></p>
+
+<p>The date must be in the YYYYMMDD format. Note that the date does not include a time value.</p></li>
+<li><p>Append the hash of the canonical request that you created in task 1; <a href="#create-canonical-request">Create a Canonical Request</a>. This value is not followed by a newline character. The hashed canonical request must be lowercase base-16 encoded, as defined by <a href="https://tools.ietf.org/html/rfc4648#section-8">Section 8 of RFC 4648</a>.</p>
+
+<p><code>
+daf6b02d8ae6809bf3b2445c480c1ee6038da1a19a2bd5ad21b7a30acd0fdec2
+</code></p></li>
+</ol>
+<h2 id='3-calculate-the-signature'>3. Calculate the Signature</h2>
+<p>Before you calculate a signature, you derive a signing key from your Usabilla secret key.</p>
+
+<p><strong>To calculate a signature:</strong></p>
+
+<ol>
+<li><p>Derive your signing key. To do this, you use your secret access key to create a series of hash-based message authentication codes (HMACs) as shown by the following pseudocode, where HMAC(key, data) represents an HMAC-SHA256 function that returns output in binary format. The result of each hash function becomes input for the next one.</p>
+
+<p><strong>Pseudocode for deriving a signing key:</strong></p>
+
+<p><code>kSecret = Your Usabilla Secret Key<br>
+kDate = HMAC(&quot;USBL1&quot; + kSecret, Date)<br>
+kSigning = HMAC(kDate, &quot;usbl1_request&quot;)</code></p>
+
+<p>Use the digest for the key derivation. Most languages have functions to compute either a binary format hash, commonly called a digest, or a hex-encoded hash, called a hexdigest. The key derivation requires that you use a digest.</p>
+
+<p><strong>Example inputs:</strong></p>
+
+<p><code>HMAC(HMAC(&quot;USBL1&quot; + kSecret,&quot;20110909&quot;),&quot;usbl1_request&quot;)</code></p>
+
+<p>The following example shows the derived signing key that results from this sequence of HMAC hash operations, using the inputs shown in the previous example. This representation shows the digit representation of each byte in the binary derived key.</p>
+
+<p><strong>Example signing key:</strong></p>
+
+<p><code>152 241 216 137 254 196 244 66 26 220 82 43 171 12 225 248 46 105 41 194 98 237 21 229 169 76 144 239 209 227 176 231</code></p></li>
+<li><p>Calculate the signature. To do this, use the signing key that you derived and the string to sign as inputs to the keyed hash function. After you&#39;ve calculated the signature as a digest, convert the binary value to a hexadecimal representation.</p>
+
+<p><strong>Pseudocode for calculating the signature:</strong></p>
+
+<p><code>signature = HexEncode(HMAC(derived-signing-key, string-to-sign))</code></p>
+
+<p><strong>Note:</strong> Make sure you specify the HMAC parameters in the correct order for the programming language you are using. This example shows the key as the first parameter and the data (message) as the second parameter, but the function that you use might specify the key and data in a different order.</p>
+
+<p><strong>Example signature:</strong></p>
+
+<p><code>ced6826de92d2bdeed8f846f0bf508e8559e98e4b0199114b84c54174deb456c</code></p></li>
+</ol>
+<h2 id='4-signing-the-request'>4. Signing the Request</h2>
+<p>After you have calculated the signature, add it to the Authorization header of your request.</p>
+
+<p>The following pseudocode shows the construction of the Authorization header:</p>
+
+<p><code>Authorization: algorithm Credential=access key ID/credential scope, SignedHeaders=SignedHeaders, Signature=signature</code></p>
+
+<p>The following example shows a finished Authorization header:</p>
+
+<p><code>Authorization: USBL1-HMAC-SHA256 Credential=AccessKey/20130524/usbl1_request, SignedHeaders=date;host;user-agent, Signature=fe5f80f77d5fa3beca038a248ff027d0445342fe2855ddc963176630326f1024</code></p>
+
+<p><strong>Note the following:</strong></p>
+
+<ul>
+<li><p>There is a space between the algorithm and Credential, not a comma. On the other hand, the SignedHeaders and Signature values are separated from the earlier values using a comma.</p></li>
+<li><p>The Credential value starts with the access key, which is prefixed with a slash (/) onto the credential scope value that you calculated earlier. In contrast, the secret access key is used to derive the signing key for the signature, but is not included in the signing information that&#39;s sent in the request.</p></li>
+</ul>
+<h1 id='request-url-structure'>Request URL structure</h1>
+<p><code>https://data.usabilla.com/live/&lt;product-name&gt;/&lt;resource-type&gt;/&lt;id&gt;/&lt;nested-resource&gt;?params</code></p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The id of the resource</td>
+</tr>
+<tr>
+<td>params</td>
+<td>String</td>
+<td>Query URL parameters</td>
+</tr>
+</tbody></table>
+<h3 id='success-200'>Success 200</h3><pre class="highlight json tab-json"><code><span class="err">Example</span><span class="w"> </span><span class="err">Success</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">Response</span><span class="w">
+
+</span><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hasMore"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1419340238645</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>items</td>
+<td>Array</td>
+<td>An array containing items of the requested resource type</td>
+</tr>
+<tr>
+<td>count</td>
+<td>Integer</td>
+<td>The number of items returned</td>
+</tr>
+<tr>
+<td>hasMore</td>
+<td>Integer</td>
+<td>A flag that indicates whether more items can be requested</td>
+</tr>
+<tr>
+<td>lastTimestamp</td>
+<td>Timestamp</td>
+<td>The timestamp of the last item in the <code>items</code> array. Can be used to request more items when <code>hasMore</code> is true</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1><h3 id='403'>403</h3><pre class="highlight json tab-json"><code><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">403</span><span class="w"> </span><span class="err">Bad</span><span class="w"> </span><span class="err">Request</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid client key"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DateError</td>
+<td>Date is not valid</td>
+</tr>
+<tr>
+<td>SignatureDoesNotMatch</td>
+<td>The signature does not match the content</td>
+</tr>
+<tr>
+<td>SignatureMissing</td>
+<td>Request doesn&#39;t have a signature</td>
+</tr>
+<tr>
+<td>TokenMismatch</td>
+<td>Token not found</td>
+</tr>
+<tr>
+<td>HostError</td>
+<td>Requested host is not valid</td>
+</tr>
+</tbody></table>
+<h3 id='404'>404</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>NotFound</td>
+<td>Invalid URL</td>
+</tr>
+</tbody></table>
+<h3 id='429'>429</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>TooManyRequests</td>
+<td>Request limit reached, please contact your Usabilla account manager</td>
+</tr>
+<tr>
+<td>RateLimitExceeded</td>
+<td>Request rate too high</td>
+</tr>
+</tbody></table>
+<h3 id='500'>500</h3><pre class="highlight json tab-json"><code><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="err">Server</span><span class="w"> </span><span class="err">Error</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The server has encountered an error."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DatabaseError</td>
+<td>Account Provider not available</td>
+</tr>
+<tr>
+<td>WrongCodec</td>
+<td>Signed algorithm is not valid</td>
+</tr>
+<tr>
+<td>QueryFailed</td>
+<td>Could not query</td>
+</tr>
+<tr>
+<td>AuthenticationFailed</td>
+<td>Please re-authenticate</td>
+</tr>
+</tbody></table>
+<h1 id='usabilla-for-websites'>Usabilla for Websites</h1><h2 id='feedback-button'>Feedback Button</h2>
+<p>This section covers the resources that can be requested regarding Usabilla&#39;s Feedback buttons. The feedback button is a button widget that is shown on your website at a visible but non-obtrusive location to enable visitors to leave feedback on their experience.</p>
+
+<p>The authorization code for each programming language can be found under the <a href="#introduction">corresponding GitHub page</a> we have for each client library.</p>
+<h2 id='get-buttons'>Get Buttons</h2><pre class="highlight javascript tab-javascript"><code><span class="cm">/* eslint-disable no-console */</span>
+<span class="cm">/**
+ * argv[0] Access Key
+ * argv[1] Secret Key
+ */</span>
+<span class="kr">const</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'yargs'</span><span class="p">).</span><span class="nx">argv</span><span class="p">.</span><span class="nx">_</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">Usabilla</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../dist/api-js-node'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">usabilla</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Usabilla</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+<span class="c1">// Get all buttons for this account.</span>
+<span class="nx">usabilla</span><span class="p">.</span><span class="nx">websites</span><span class="p">.</span><span class="nx">buttons</span>
+  <span class="p">.</span><span class="nx">get</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">buttons</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">button</span> <span class="o">=</span> <span class="nx">buttons</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">button</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">reason</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// If the usabilla call fails, we want to see the error message</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">reason</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">usabilla</span> <span class="k">as</span> <span class="n">ub</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="c"># Create an API client with access key and secret key</span>
+    <span class="n">api</span> <span class="o">=</span> <span class="n">ub</span><span class="o">.</span><span class="n">APIClient</span><span class="p">(</span><span class="s">'YOUR-ACCESS-KEY'</span><span class="p">,</span> <span class="s">'YOUR-SECRET-KEY'</span><span class="p">)</span>
+
+    <span class="c"># Get all buttons for this account</span>
+    <span class="n">buttons</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_resource</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">SCOPE_LIVE</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">PRODUCT_WEBSITES</span><span class="p">,</span><span class="n">api</span><span class="o">.</span><span class="n">RESOURCE_BUTTON</span><span class="p">)</span>
+
+    <span class="c"># Print first button</span>
+    <span class="n">first_button</span> <span class="o">=</span> <span class="n">buttons</span><span class="p">[</span><span class="s">'items'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">print</span> <span class="n">first_button</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span>
+</code></pre><pre class="highlight php tab-php"><code>// Under construction
+</code></pre><pre class="highlight go tab-go"><code><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
+
+</span><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+    </span><span class="s">"os"</span><span class="x">
+    </span><span class="s">"fmt"</span><span class="x">
+    </span><span class="s">"github.com/usabilla/api-go"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="k">func</span><span class="x"> </span><span class="n">main</span><span class="p">()</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="n">key</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"USABILLA_API_KEY"</span><span class="p">)</span><span class="x">
+    </span><span class="n">secret</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"USABILLA_API_SECRET"</span><span class="p">)</span><span class="x">
+
+    </span><span class="c">// Pass the key and secret which should be defined as ENV vars</span><span class="x">
+    </span><span class="n">usabilla</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">usabilla</span><span class="o">.</span><span class="n">New</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="x"> </span><span class="n">secret</span><span class="p">,</span><span class="x"> </span><span class="no">nil</span><span class="p">)</span><span class="x">
+
+    </span><span class="n">resource</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">usabilla</span><span class="o">.</span><span class="n">Buttons</span><span class="p">()</span><span class="x">
+
+    </span><span class="c">// Get the first ten buttons</span><span class="x">
+    </span><span class="n">params</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">{</span><span class="s">"limit"</span><span class="o">:</span><span class="x"> </span><span class="s">"10"</span><span class="p">}</span><span class="x">
+    </span><span class="n">buttons</span><span class="p">,</span><span class="x"> </span><span class="n">_</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">resource</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="n">params</span><span class="p">)</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span></code></pre>
+<blockquote>
+<p>The data will be received in JSON format like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8d73568ac2be"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My website feedback button"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='https-request'>HTTPS Request</h3>
+<p><code>https://data.usabilla.com/live/websites/button</code></p>
+
+<p>This request returns all your feedback buttons in JSON format as shown to the right.</p>
+<h3 id='request-example'>Request example</h3>
+<p><code>https://data.usabilla.com/live/websites/button</code></p>
+<h3 id='success-200-2'>Success 200</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unique identifier for a button. 12 characters long.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>The name of the button given when created. Can be updated in the button setup page.</td>
+</tr>
+</tbody></table>
+<h2 id='get-feedback-items'>Get Feedback Items</h2><pre class="highlight javascript tab-javascript"><code><span class="cm">/* eslint-disable no-console */</span>
+<span class="cm">/**
+ * argv[0] Access Key
+ * argv[1] Secret Key
+ */</span>
+<span class="kr">const</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'yargs'</span><span class="p">).</span><span class="nx">argv</span><span class="p">.</span><span class="nx">_</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">Usabilla</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../dist/api-js-node'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">usabilla</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Usabilla</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="c1">// Use a button id to get feedback for a specific button.</span>
+    <span class="kd">let</span> <span class="nx">buttonFeedbackQuery</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">id</span><span class="p">:</span> <span class="nx">button</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+      <span class="na">params</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">limit</span><span class="p">:</span> <span class="mi">10</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+    <span class="nx">usabilla</span><span class="p">.</span><span class="nx">websites</span><span class="p">.</span><span class="nx">buttons</span><span class="p">.</span><span class="nx">feedback</span>
+      <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">buttonFeedbackQuery</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">feedback</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'# button feedback'</span><span class="p">,</span> <span class="nx">feedback</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">reason</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">reason</span><span class="p">);</span>
+      <span class="p">});</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">reason</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// If the usabilla call fails, we want to see the error message</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">reason</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">usabilla</span> <span class="k">as</span> <span class="n">ub</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="c"># Create an API client with access key and secret key</span>
+    <span class="n">api</span> <span class="o">=</span> <span class="n">ub</span><span class="o">.</span><span class="n">APIClient</span><span class="p">(</span><span class="s">'YOUR-ACCESS-KEY'</span><span class="p">,</span> <span class="s">'YOUR-SECRET-KEY'</span><span class="p">)</span>
+
+    <span class="c"># Get the feedback items from a specific button</span>
+    <span class="n">feedback_items</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_resource</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">SCOPE_LIVE</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">PRODUCT_WEBSITES</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">RESOURCE_FEEDBACK</span><span class="p">,</span> <span class="s">'button_id'</span><span class="p">,</span> <span class="n">iterate</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">print</span> <span class="nb">len</span><span class="p">([</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">feedback_items</span><span class="p">])</span>
+</code></pre><pre class="highlight php tab-php"><code>require 'vendor/autoload.php';
+
+use Usabilla\API\Client\UsabillaClient;
+
+// Creates a new Usabilla client.
+$client = new UsabillaClient('ACCESS_KEY', 'SECRET_KEY');
+
+// Specify the parameters as mentioned in the service description.
+$params = ['id' =&gt; 'BUTTON_ID', 'limit' =&gt; 5];
+
+// Gets the command.
+$command = $client-&gt;getCommand('GetWebsiteFeedbackItems', $params);
+
+// Executes the command.
+$response = $client-&gt;execute($command);
+
+// Prints the received response.
+print_r($response);
+</code></pre><pre class="highlight go tab-go"><code><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
+
+</span><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+    </span><span class="s">"os"</span><span class="x">
+    </span><span class="s">"fmt"</span><span class="x">
+    </span><span class="s">"github.com/usabilla/api-go"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="k">func</span><span class="x"> </span><span class="n">main</span><span class="p">()</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="n">key</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"USABILLA_API_KEY"</span><span class="p">)</span><span class="x">
+    </span><span class="n">secret</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"USABILLA_API_SECRET"</span><span class="p">)</span><span class="x">
+
+    </span><span class="c">// Pass the key and secret which should be defined as ENV vars</span><span class="x">
+    </span><span class="n">usabilla</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">usabilla</span><span class="o">.</span><span class="n">New</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="x"> </span><span class="n">secret</span><span class="p">,</span><span class="x"> </span><span class="no">nil</span><span class="p">)</span><span class="x">
+
+    </span><span class="n">resource</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">usabilla</span><span class="o">.</span><span class="n">Buttons</span><span class="p">()</span><span class="x">
+
+    </span><span class="c">// Get the first ten buttons</span><span class="x">
+    </span><span class="n">params</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">{</span><span class="s">"limit"</span><span class="o">:</span><span class="x"> </span><span class="s">"10"</span><span class="p">}</span><span class="x">
+    </span><span class="n">buttons</span><span class="p">,</span><span class="x"> </span><span class="n">_</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">resource</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="n">params</span><span class="p">)</span><span class="x">
+
+    </span><span class="c">// Print all feedback items for each button</span><span class="x">
+    </span><span class="k">for</span><span class="x"> </span><span class="n">_</span><span class="p">,</span><span class="x"> </span><span class="n">button</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="k">range</span><span class="x"> </span><span class="n">buttons</span><span class="o">.</span><span class="n">Items</span><span class="x"> </span><span class="p">{</span><span class="x">
+        </span><span class="n">feedback</span><span class="p">,</span><span class="x"> </span><span class="n">_</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">resource</span><span class="o">.</span><span class="n">Feedback</span><span class="p">()</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span><span class="x"> </span><span class="no">nil</span><span class="p">)</span><span class="x">
+        </span><span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Feedback for button: %s</span><span class="se">\n</span><span class="s">%v</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="x"> </span><span class="n">button</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span><span class="x"> </span><span class="n">feedback</span><span class="o">.</span><span class="n">Items</span><span class="p">)</span><span class="x">
+    </span><span class="p">}</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span></code></pre>
+<blockquote>
+<p>The data will be received in JSON format like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"buttonId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07f5ec0c3b93"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asd"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"custom"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-28T14:48:39.289Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"553f9dc7d350221532dfa715"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"labels"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Netherlands"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"nps"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"publicUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.usabilla.com/feedback/item/538ce51b93804a7f568324fbef81e6559743ba7e"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://staging.usabilla.com/"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"userAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>After a visitor leaves feedback on a button it becomes a feedback item that consists of several data fields.</p>
+<h3 id='https-request-2'>HTTPS Request</h3>
+<p><code>https://data.usabilla.com/live/websites/button/&lt;id&gt;/feedback</code></p>
+<h3 id='request-example-2'>Request example</h3>
+<p><code>https://data.usabilla.com/live/websites/button/8d73568ac2be/feedback/?limit=1&amp;since=1419340238645</code></p>
+<h3 id='parameter'>Parameter</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The button id. If you wish to get all available feedback items use * (asterisk) as value.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Optional URL query parameter that limits the number of retrieved results between 1 and 100. Default value is 100.</td>
+</tr>
+<tr>
+<td>since</td>
+<td>Timestamp</td>
+<td>[Optional] UTC Timestamp (in milliseconds) URL query parameter used to retrieve items of which creation date is after the supplied value.</td>
+</tr>
+</tbody></table>
+<h3 id='success-200-3'>Success 200</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unique identifier of the feedback item.</td>
+</tr>
+<tr>
+<td>userAgent</td>
+<td>String</td>
+<td>Information about the browser&#39;s user-agent.</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>String</td>
+<td>Commentary left by the user in the feedback form.</td>
+</tr>
+<tr>
+<td>commentTranslated</td>
+<td>String</td>
+<td>The translated version of the commentary left by the user.</td>
+</tr>
+<tr>
+<td>commentTranslatedFrom</td>
+<td>String</td>
+<td>The language from which the translation was made.</td>
+</tr>
+<tr>
+<td>location</td>
+<td>String</td>
+<td>String containing geographical information about the location of the user based on the user&#39;s ip address.</td>
+</tr>
+<tr>
+<td>date</td>
+<td>Date</td>
+<td>The creation date of the feedback item, in UTC. The format being used is <code>%Y-%m-%dT%H:%M:%S.%fZ</code> as defined in <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601.</a></td>
+</tr>
+<tr>
+<td>custom</td>
+<td>Map</td>
+<td>Custom variables that have been assigned in the button setup page.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String</td>
+<td>Optional field that the user fills in in case he wishes to be contacted.</td>
+</tr>
+<tr>
+<td>image</td>
+<td>String</td>
+<td>The screenshot of the item that has been selected to give feedback for.</td>
+</tr>
+<tr>
+<td>labels</td>
+<td>Map</td>
+<td>An array of labels that have been assigned to the feedback item.</td>
+</tr>
+<tr>
+<td>nps</td>
+<td>Integer</td>
+<td>The Net Promoter Score given by the user (0-10).</td>
+</tr>
+<tr>
+<td>publicUrl</td>
+<td>String</td>
+<td>When the owner of the button has publicized the feedback item it becomes publicly accesible through this URL.</td>
+</tr>
+<tr>
+<td>rating</td>
+<td>Integer</td>
+<td>Rating given by the user (0-5).</td>
+</tr>
+<tr>
+<td>buttonId</td>
+<td>String</td>
+<td>The source button of the feedback item.</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Array</td>
+<td>An array of tags assigned to the feedback item.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>Integer</td>
+<td>The link through which the source button can be accessed in the backend.</td>
+</tr>
+</tbody></table>
+<h2 id='campaigns'>Campaigns</h2>
+<p>This section covers how to retrieve data for Usabilla Campaigns. These surveys are aimed towards web users with specific targeting options set up. The survey will trigger without the users intent, actively asking for feedback.</p>
+<h2 id='get-campaigns'>Get Campaigns</h2><pre class="highlight javascript tab-javascript"><code><span class="cm">/**
+ * argv[0] Access Key
+ * argv[1] Secret Key
+ */</span>
+<span class="kr">const</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'yargs'</span><span class="p">).</span><span class="nx">argv</span><span class="p">.</span><span class="nx">_</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">Usabilla</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../dist/api-js-node'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">usabilla</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Usabilla</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+<span class="c1">// Get all campaigns</span>
+<span class="nx">usabilla</span><span class="p">.</span><span class="nx">websites</span><span class="p">.</span><span class="nx">campaigns</span>
+  <span class="p">.</span><span class="nx">get</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">campaigns</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">campaign</span> <span class="o">=</span> <span class="nx">campaigns</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'# campaigns'</span><span class="p">,</span> <span class="nx">campaigns</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">campaign</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">usabilla</span> <span class="k">as</span> <span class="n">ub</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="c"># Create an API client with access key and secret key</span>
+    <span class="n">api</span> <span class="o">=</span> <span class="n">ub</span><span class="o">.</span><span class="n">APIClient</span><span class="p">(</span><span class="s">'YOUR-ACCESS-KEY'</span><span class="p">,</span> <span class="s">'YOUR-SECRET-KEY'</span><span class="p">)</span>
+
+    <span class="c"># Get all campaigns</span>
+    <span class="n">campaigns</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_resource</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">SCOPE_LIVE</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">PRODUCT_WEBSITES</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">RESOURCE_CAMPAIGN</span><span class="p">)</span>
+    <span class="n">first_campaign</span> <span class="o">=</span> <span class="n">campaigns</span><span class="p">[</span><span class="s">'items'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">print</span> <span class="n">first_campaign</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span>
+</code></pre><pre class="highlight php tab-php"><code>//Under construction
+</code></pre><pre class="highlight go tab-go"><code><span class="c">//Under construction</span><span class="x">
+</span></code></pre>
+<blockquote>
+<p>The data will be received in JSON format like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5499612ec4698839368b4573"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-01-15T19:48:06.003Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"buttonId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8d73568ac2be"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"analyticsId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"901f1d832a55"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My campaign"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boost"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='https-request-3'>HTTPS Request</h3>
+<p><code>https://data.usabilla.com/live/websites/campaign</code></p>
+
+<p>This request returns a list of your Usabilla for Websites Campaigns.</p>
+<h3 id='request-example-3'>Request example</h3>
+<p><code>https://data.usabilla.com/live/websites/campaign?limit=1&amp;since=1419340238645</code></p>
+<h3 id='parameter-2'>Parameter</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Optional. URL query parameter that limits the number of retrieved results between 1 and 100. Defaults to 100 when omitted.</td>
+</tr>
+<tr>
+<td>since</td>
+<td>Timestamp</td>
+<td>Optional. UTC Timestamp (in milliseconds) URL query parameter used to retrieve items of which creation date is after the supplied value.</td>
+</tr>
+</tbody></table>
+<h3 id='success-200-4'>Success 200</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unique identifier for a campaign.</td>
+</tr>
+<tr>
+<td>date</td>
+<td>Date</td>
+<td>The creation date of the campaign, in UTC. The format being used is <code>%Y-%m-%dT%H:%M:%S.%fZ</code> as defined in <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601.</a></td>
+</tr>
+<tr>
+<td>buttonId</td>
+<td>String</td>
+<td>The source button that triggers the campaign.</td>
+</tr>
+<tr>
+<td>analyticsId</td>
+<td>String</td>
+<td>Analytics ID.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>The status of the campaign. Possible values are <code>created, active, paused and finished</code>.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>The name of the campaign given when created. Can be updated in the campaign setup page.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>The type of the campaign.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>String</td>
+<td>The url of the campaign when the campaign is of type Survey, empty otherwise.</td>
+</tr>
+</tbody></table>
+<h2 id='get-campaign-results'>Get Campaign Results</h2><pre class="highlight javascript tab-javascript"><code><span class="cm">/**
+ * argv[0] Access Key
+ * argv[1] Secret Key
+ */</span>
+<span class="kr">const</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'yargs'</span><span class="p">).</span><span class="nx">argv</span><span class="p">.</span><span class="nx">_</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">Usabilla</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../dist/api-js-node'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">usabilla</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Usabilla</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+<span class="c1">// Specify a campaign id</span>
+<span class="kd">let</span> <span class="nx">campaignQuery</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">id</span><span class="p">:</span> <span class="nx">campaign</span><span class="p">.</span><span class="nx">id</span>
+<span class="p">};</span>
+
+<span class="c1">// Get the responses from a campaign with the specific id</span>
+<span class="nx">usabilla</span><span class="p">.</span><span class="nx">websites</span><span class="p">.</span><span class="nx">campaigns</span><span class="p">.</span><span class="nx">results</span>
+    <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">campaignQuery</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">responses</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'# web campaign responses'</span><span class="p">,</span> <span class="nx">responses</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">reason</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">reason</span><span class="p">);</span>
+    <span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">usabilla</span> <span class="k">as</span> <span class="n">ub</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+
+<span class="c"># Get the responses of a specific campaign</span>
+    <span class="n">responses</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_resource</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">SCOPE_LIVE</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">PRODUCT_WEBSITES</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">RESOURCE_CAMPAIGN_RESULT</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">CAMPAIGN_ID</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">iterate</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">print</span> <span class="nb">len</span><span class="p">([</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">responses</span><span class="p">])</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="c">//Under construction</span><span class="x">
+</span></code></pre><pre class="highlight php tab-php"><code>//Under construction
+</code></pre>
+<blockquote>
+<p>The data will be received in JSON format like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"549972d5c469885e548b4570"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"campaignId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5499612ec4698839368b4573"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"userAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amsterdam, Netherlands"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-01-15T19:48:06.003Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"form_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"form1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://usabilla.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='https-request-4'>HTTPS Request</h3>
+<p><code>https://data.usabilla.com/live/websites/campaign/&lt;id&gt;/results</code></p>
+
+<p>This request returns the responses of a campaign with a specific id.</p>
+<h3 id='request-example-4'>Request example</h3>
+<p><code>https://data.usabilla.com/live/websites/campaign/5499612ec4698839368b4573/results?limit=1&amp;since=1419340238645</code></p>
+<h3 id='parameter-3'>Parameter</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The campaign id. Use <code>*</code> (asterisk) to request feedback of all campaigns.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Optional. URL query parameter that limits the number of retrieved results between 1 and 100. Defaults to 100 when omitted.</td>
+</tr>
+<tr>
+<td>since</td>
+<td>Timestamp</td>
+<td>Optional. UTC Timestamp (in milliseconds) URL query parameter used to retrieve items of which creation date is after the supplied value.</td>
+</tr>
+</tbody></table>
+<h3 id='success-200-5'>Success 200</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unique identifier for a campaign result.</td>
+</tr>
+<tr>
+<td>date</td>
+<td>Date</td>
+<td>The creation date of the campaign result item, in UTC. The format being used is <code>%Y-%m-%dT%H:%M:%S.%fZ</code> as defined in <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601.</a></td>
+</tr>
+<tr>
+<td>campaignId</td>
+<td>String</td>
+<td>Unique identifier for the campaign it belongs to.</td>
+</tr>
+<tr>
+<td>userAgent</td>
+<td>String</td>
+<td>Information about the browser user agent.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>String</td>
+<td>Origin URL where the campaign result was registered.</td>
+</tr>
+<tr>
+<td>customData</td>
+<td>Map</td>
+<td>Custom variables that have been assigned in the campaign setup page.</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Array</td>
+<td>An array containing the values of the campaign form fields.</td>
+</tr>
+<tr>
+<td>time</td>
+<td>Integer</td>
+<td>The amount of time the user has taken to complete the survey. Expressed in miliseconds.</td>
+</tr>
+<tr>
+<td>location</td>
+<td>String</td>
+<td>String containing geographical information about the location of the user based on the user&#39;s IP address.</td>
+</tr>
+</tbody></table>
+<h2 id='get-campaign-statistics'>Get Campaign Statistics</h2><pre class="highlight javascript tab-javascript"><code><span class="cm">/**
+ * argv[0] Access Key
+ * argv[1] Secret Key
+ */</span>
+<span class="kr">const</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'yargs'</span><span class="p">).</span><span class="nx">argv</span><span class="p">.</span><span class="nx">_</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">Usabilla</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../dist/api-js-node'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">usabilla</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Usabilla</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+<span class="c1">// Get the stats of the first campaign</span>
+<span class="nx">usabilla</span><span class="p">.</span><span class="nx">websites</span><span class="p">.</span><span class="nx">campaigns</span><span class="p">.</span><span class="nx">stats</span>
+    <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">campaignQuery</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">stats</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'# web campaign stats'</span><span class="p">,</span> <span class="nx">stats</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">reason</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">reason</span><span class="p">);</span>
+    <span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">usabilla</span> <span class="k">as</span> <span class="n">ub</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+<span class="c"># Get the stats of the first campaign</span>
+    <span class="n">stats</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_resource</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">SCOPE_LIVE</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">PRODUCT_WEBSITES</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">RESOURCE_CAMPAIGN_STATS</span><span class="p">,</span> <span class="n">first_campaign</span><span class="p">[</span><span class="s">'id'</span><span class="p">])</span>
+    <span class="k">print</span> <span class="n">stats</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="c">//Under construction</span><span class="x">
+</span></code></pre><pre class="highlight php tab-php"><code>//Under construction
+</code></pre>
+<blockquote>
+<p>The data will be received in JSON format like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"549972d5c469885e548b4570"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"conversion"</span><span class="p">:</span><span class="w"> </span><span class="mi">83</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='https-request-5'>HTTPS Request</h3>
+<p><code>https://data.usabilla.com/live/websites/campaign/&lt;id&gt;/stats</code></p>
+
+<p>This request returns the statistics of a campaign with a specific id.</p>
+<h3 id='request-example-5'>Request example</h3>
+<p><code>https://data.usabilla.com/live/websites/campaign/5499612ec4698839368b4573/results?limit=1&amp;since=1419340238645</code></p>
+<h3 id='parameter-4'>Parameter</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The campaign id. Use <code>*</code> (asterisk) to request feedback of all campaigns.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Optional. URL query parameter that limits the number of retrieved results between 1 and 100. Defaults to 100 when omitted.</td>
+</tr>
+<tr>
+<td>since</td>
+<td>Timestamp</td>
+<td>Optional. UTC Timestamp (in milliseconds) URL query parameter used to retrieve items of which creation date is after the supplied value.</td>
+</tr>
+</tbody></table>
+<h3 id='success-200-6'>Success 200</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unique identifier for a campaign result.</td>
+</tr>
+<tr>
+<td>completed</td>
+<td>Integer</td>
+<td>The amount of completed campaign forms that were submitted.</td>
+</tr>
+<tr>
+<td>views</td>
+<td>Integer</td>
+<td>The amount of views the campaign form got by counting how many times it was opened.</td>
+</tr>
+<tr>
+<td>conversion</td>
+<td>Integer</td>
+<td>The percentage of conversion (views to completion).</td>
+</tr>
+</tbody></table>
+<h2 id='in-page'>In-Page</h2>
+<p>This section is regarding the Usabilla In-Page product and how to retrieve the data. The In-Page widget can be placed anywhere on your webpage for users to give valuable feedback on the web content.</p>
+<h2 id='get-in-page-widgets'>Get In-Page Widgets</h2><pre class="highlight javascript tab-javascript"><code><span class="cm">/**
+ * argv[0] Access Key
+ * argv[1] Secret Key
+ */</span>
+<span class="kr">const</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'yargs'</span><span class="p">).</span><span class="nx">argv</span><span class="p">.</span><span class="nx">_</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">Usabilla</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../dist/api-js-node'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">usabilla</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Usabilla</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+<span class="c1">// Get all inpage widgets for this account.</span>
+<span class="nx">usabilla</span><span class="p">.</span><span class="nx">websites</span><span class="p">.</span><span class="nx">inpage</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Under construction</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="c">// Under construction</span><span class="x">
+</span></code></pre><pre class="highlight php tab-php"><code>// Under construction
+</code></pre>
+<blockquote>
+<p>The data will be received in JSON format like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5499612ec4698839368b4573"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-01-15T19:48:06.003Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My In-Page widget"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='https-request-6'>HTTPS Request</h3>
+<p><code>https://data.usabilla.com/live/websites/inpage</code></p>
+
+<p>This request returns a list of your Usabilla for Websites in-page widgets.</p>
+<h3 id='request-example-6'>Request example</h3>
+<p><code>https://data.usabilla.com/live/websites/inpage?limit=1&amp;since=1419340238645</code></p>
+<h3 id='parameter-5'>Parameter</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Optional. URL query parameter that limits the number of retrieved results between 1 and 100. Defaults to 100 when omitted.</td>
+</tr>
+<tr>
+<td>since</td>
+<td>Timestamp</td>
+<td>Optional. UTC Timestamp (in milliseconds) URL query parameter used to retrieve items of which creation date is after the supplied value.</td>
+</tr>
+</tbody></table>
+<h3 id='success-200-7'>Success 200</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unique identifier for an in-page widget.</td>
+</tr>
+<tr>
+<td>date</td>
+<td>Date</td>
+<td>The creation date of the in-page widget, in UTC. The format being used is <code>%Y-%m-%dT%H:%M:%S.%fZ</code> as defined in <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601.</a></td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>The name of the In-Page widget given when created. Can be updated in the In-Page widget setup page.</td>
+</tr>
+</tbody></table>
+<h2 id='get-in-page-feedback'>Get In-Page Feedback</h2><pre class="highlight javascript tab-javascript"><code><span class="cm">/**
+ * argv[0] Access Key
+ * argv[1] Secret Key
+ */</span>
+<span class="kr">const</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'yargs'</span><span class="p">).</span><span class="nx">argv</span><span class="p">.</span><span class="nx">_</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">Usabilla</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../dist/api-js-node'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">usabilla</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Usabilla</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+<span class="c1">// Get all inpage widgets for this account.</span>
+<span class="nx">usabilla</span><span class="p">.</span><span class="nx">websites</span><span class="p">.</span><span class="nx">inpage</span>
+  <span class="p">.</span><span class="nx">get</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">inPageWidgets</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// Get the feedback for an inpage widget with id.</span>
+    <span class="kd">let</span> <span class="nx">inPageQuery</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">id</span><span class="p">:</span> <span class="nx">inPageWidgets</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">id</span>
+    <span class="p">};</span>
+
+    <span class="c1">// Get the feedback of the first inpage widget</span>
+    <span class="nx">usabilla</span><span class="p">.</span><span class="nx">websites</span><span class="p">.</span><span class="nx">inpage</span><span class="p">.</span><span class="nx">feedback</span>
+      <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">inPageQuery</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">feedback</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'# inpage feedback'</span><span class="p">,</span> <span class="nx">feedback</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">reason</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">reason</span><span class="p">);</span>
+      <span class="p">});</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">reason</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// If the Usabilla call fails, we want to see the error message</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">reason</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Under construction</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="c">// Under construction</span><span class="x">
+</span></code></pre><pre class="highlight php tab-php"><code>// Under construction
+</code></pre>
+<blockquote>
+<p>The data will be received in JSON format like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"549972d5c469885e548b4570"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-01-15T19:48:06.003Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"widgetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5499612ec4698839368b4573"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"userAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amsterdam, Netherlands"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"geo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Schoten"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BE"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Very nice indeed"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Did_you_enjoy_th"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"form_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"form1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"mood"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"nps"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://usabilla.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='https-request-7'>HTTPS Request</h3>
+<p><code>https://data.usabilla.com/live/websites/inpage/&lt;id&gt;/feedback</code></p>
+
+<p>This request returns a list of your Usabilla for Websites in-page widgets.</p>
+<h3 id='request-example-7'>Request example</h3>
+<p><code>https://data.usabilla.com/live/websites/inpage/5499612ec4698839368b4573/feedback?limit=1&amp;since=1419340238645</code></p>
+<h3 id='parameter-6'>Parameter</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The in-page widget id. Use <code>*</code> (asterisk) to request feedback of all in-page widgets.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Optional. URL query parameter that limits the number of retrieved results between 1 and 100. Defaults to 100 when omitted.</td>
+</tr>
+<tr>
+<td>since</td>
+<td>Timestamp</td>
+<td>Optional. UTC Timestamp (in milliseconds) URL query parameter used to retrieve items of which creation date is after the supplied value.</td>
+</tr>
+</tbody></table>
+<h3 id='success-200-8'>Success 200</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unique identifier for the In-Page widget feedback item.</td>
+</tr>
+<tr>
+<td>date</td>
+<td>Date</td>
+<td>The creation date of the in-page widget, in UTC. The format being used is <code>%Y-%m-%dT%H:%M:%S.%fZ</code> as defined in <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601.</a></td>
+</tr>
+<tr>
+<td>data</td>
+<td>Array</td>
+<td>An array containing the values of the In-Page widget form fields.</td>
+</tr>
+<tr>
+<td>customData</td>
+<td>Array</td>
+<td>An array containing the values of the widget&#39;s custom fields.</td>
+</tr>
+<tr>
+<td>widgetId</td>
+<td>String</td>
+<td>Unique identifier for the in-page widget it belongs.</td>
+</tr>
+<tr>
+<td>mood</td>
+<td>Integer</td>
+<td>Mood given by the user (0-5).</td>
+</tr>
+<tr>
+<td>rating</td>
+<td>Float32</td>
+<td>Rating from 0.0 to 1.0.</td>
+</tr>
+<tr>
+<td>nps</td>
+<td>Integer</td>
+<td>The Net Promoter Score given by the user (0-10).</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>String</td>
+<td>Commentary left by the user in the feedback form.</td>
+</tr>
+<tr>
+<td>userAgent</td>
+<td>String</td>
+<td>Information about the browser user agent.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>String</td>
+<td>Origin URL where the in-page widget result was registered.</td>
+</tr>
+<tr>
+<td>geo</td>
+<td>Map</td>
+<td>Geographic location of user, consisting of <code>city</code>, <code>country</code> and <code>region</code>.</td>
+</tr>
+</tbody></table>
+<h1 id='usabilla-for-email'>Usabilla for Email</h1>
+<p>Usabilla for Email is a real-time customer feedback solution for integration with your email system. This section covers the resources that can be requested regarding the Usabilla for Email product.</p>
+<h2 id='get-email-widgets'>Get Email Widgets</h2>
+<p>The email feedback widget is a widget usually placed in the footer of an email. Your recipients can click on the feedback widget after reading your email in order to give feedback.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="cm">/**
+ * argv[0] Access Key
+ * argv[1] Secret Key
+ */</span>
+<span class="kr">const</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'yargs'</span><span class="p">).</span><span class="nx">argv</span><span class="p">.</span><span class="nx">_</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">Usabilla</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../dist/api-js-node'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">usabilla</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Usabilla</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+<span class="c1">// Get all email widgets for this account.</span>
+<span class="nx">usabilla</span><span class="p">.</span><span class="nx">email</span><span class="p">.</span><span class="nx">widgets</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">usabilla</span> <span class="k">as</span> <span class="n">ub</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="c"># Create an API client with access key and secret key</span>
+    <span class="n">api</span> <span class="o">=</span> <span class="n">ub</span><span class="o">.</span><span class="n">APIClient</span><span class="p">(</span><span class="s">'YOUR-ACCESS-KEY'</span><span class="p">,</span> <span class="s">'YOUR-SECRET-KEY'</span><span class="p">)</span>
+
+    <span class="c"># Get all email widgets for this account</span>
+    <span class="n">widgets</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_resource</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">SCOPE_LIVE</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">PRODUCT_EMAIL</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">RESOURCE_BUTTON</span><span class="p">)</span>
+    <span class="n">first_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="p">[</span><span class="s">'items'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">print</span> <span class="n">first_widget</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="c">// Under construction</span><span class="x">
+</span></code></pre><pre class="highlight php tab-php"><code>// Under construction
+</code></pre>
+<blockquote>
+<p>The data will be received in JSON format like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-11T14:35:04.536Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-11T14:35:04.539Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"af8c54de7067"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joshua's email footer"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e4b5a0661176"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"introText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"We'd love your input"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en_US"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mail campaign"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='https-request-8'>HTTPS Request</h3>
+<p><code>https://data.usabilla.com/live/email/widget</code></p>
+
+<p>This request returns a list of your email widgets</p>
+<h3 id='request-example-8'>Request example</h3>
+<p><code>https://data.usabilla.com/live/email/widget?limit=1</code></p>
+<h3 id='parameter-7'>Parameter</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Optional URL query parameter that limits the number of retrieved results between 1 and 100. Defaults to 100 when omitted.</td>
+</tr>
+<tr>
+<td>since</td>
+<td>Timestamp</td>
+<td>Optional UTC Timestamp (in milliseconds) URL query parameter used to retrieve items of which creation date is after the supplied value.</td>
+</tr>
+</tbody></table>
+<h3 id='success-200-9'>Success 200</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unique identifier of the widget. 12 characters long.</td>
+</tr>
+<tr>
+<td>date</td>
+<td>Date</td>
+<td>The creation date of the email widget, in UTC. The format being used is <code>%Y-%m-%dT%H:%M:%S.%fZ</code> as defined in <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601.</a></td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>The name of the widget.</td>
+</tr>
+<tr>
+<td>introText</td>
+<td>String</td>
+<td>The name of the widget given when created. Can be updated in the widget setup page.</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>String</td>
+<td>Regional language of the widget and form text items.</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Array</td>
+<td>List of groups this campaign item is member of.</td>
+</tr>
+</tbody></table>
+<h2 id='get-email-feedback'>Get Email Feedback</h2>
+<p>After the reader leaves feedback on a widget it becomes a feedback item that you can view in your Usabilla dashboard.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="cm">/**
+ * argv[0] Access Key
+ * argv[1] Secret Key
+ */</span>
+<span class="kr">const</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'yargs'</span><span class="p">).</span><span class="nx">argv</span><span class="p">.</span><span class="nx">_</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">Usabilla</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../dist/api-js-node'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">usabilla</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Usabilla</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+<span class="c1">// Get all email widgets for this account.</span>
+<span class="nx">usabilla</span><span class="p">.</span><span class="nx">email</span><span class="p">.</span><span class="nx">widgets</span>
+  <span class="p">.</span><span class="nx">get</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">emailWidgets</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// Get the feedback for a email widget with id.</span>
+    <span class="kd">let</span> <span class="nx">emailQuery</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">id</span><span class="p">:</span> <span class="nx">emailWidgets</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">id</span>
+    <span class="p">};</span>
+
+    <span class="c1">// Get the feedback of the first email widget</span>
+    <span class="nx">usabilla</span><span class="p">.</span><span class="nx">email</span><span class="p">.</span><span class="nx">widgets</span><span class="p">.</span><span class="nx">feedback</span>
+      <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">emailQuery</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">feedback</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'# email feedback'</span><span class="p">,</span> <span class="nx">feedback</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">reason</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">reason</span><span class="p">);</span>
+      <span class="p">});</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">reason</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// If the usabilla call fails, we want to see the error message</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">reason</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">usabilla</span> <span class="k">as</span> <span class="n">ub</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="c"># Create an API client with access key and secret key</span>
+    <span class="n">api</span> <span class="o">=</span> <span class="n">ub</span><span class="o">.</span><span class="n">APIClient</span><span class="p">(</span><span class="s">'YOUR-ACCESS-KEY'</span><span class="p">,</span> <span class="s">'YOUR-SECRET-KEY'</span><span class="p">)</span>
+
+    <span class="c"># Get all email widgets for this account</span>
+    <span class="n">widgets</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_resource</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">SCOPE_LIVE</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">PRODUCT_EMAIL</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">RESOURCE_BUTTON</span><span class="p">)</span>
+    <span class="n">first_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="p">[</span><span class="s">'items'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">print</span> <span class="n">first_widget</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span>
+
+    <span class="c"># Get the feedback of the first email widget</span>
+    <span class="n">feedback</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_resource</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">SCOPE_LIVE</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">PRODUCT_EMAIL</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">RESOURCE_FEEDBACK</span><span class="p">,</span> <span class="n">first_widget</span><span class="p">[</span><span class="s">'id'</span><span class="p">],</span> <span class="n">iterate</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">print</span> <span class="nb">len</span><span class="p">([</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">feedback</span><span class="p">])</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="c">// Under construction</span><span class="x">
+</span></code></pre><pre class="highlight php tab-php"><code>// Under construction
+</code></pre>
+<blockquote>
+<p>The data will be received in JSON format like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5499612ec4698839368b4573"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"userAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thx for your email."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amsterdam, Netherlands"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-01-15T19:48:06.003Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"form_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"form1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dev@usabilla"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"labels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"label 1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"label 2"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"nps"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"buttonId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8d73568ac2be"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"interesting"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"unattractive"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"urlParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"utm_campaign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234576_20160101_my_campaign"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"utm_medium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"utm_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email_feedback_form"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='https-request-9'>HTTPS Request</h3>
+<p><code>https://data.usabilla.com/live/email/widget/&lt;id&gt;/feedback</code></p>
+
+<p>This request returns a list of your email widget feedback.</p>
+<h3 id='request-example-9'>Request example</h3>
+<p><code>https://data.usabilla.com/live/email/widget/8d73568ac2be/feedback?limit=1&amp;since=1419340238645</code></p>
+<h3 id='parameter-8'>Parameter</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The widget id. If you wish to get all available feedback items use * (asterisk) as value.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Optional URL query parameter that limits the number of retrieved results between 1 and 100. Defaults to 100 when omitted.</td>
+</tr>
+<tr>
+<td>since</td>
+<td>Timestamp</td>
+<td>Optional UTC Timestamp (in milliseconds) URL query parameter used to retrieve items of which creation date is after the supplied value.</td>
+</tr>
+</tbody></table>
+<h3 id='success-200-10'>Success 200</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unique identifier of the feedback item.</td>
+</tr>
+<tr>
+<td>userAgent</td>
+<td>String</td>
+<td>Information about the browser user agent.</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>String</td>
+<td>Commentary left by the user in the feedback form.</td>
+</tr>
+<tr>
+<td>location</td>
+<td>String</td>
+<td>String containing geographical information about the location of the user based on the user&#39;s ip address.</td>
+</tr>
+<tr>
+<td>date</td>
+<td>Date</td>
+<td>The creation date of the email widget, in UTC. The format being used is <code>%Y-%m-%dT%H:%M:%S.%fZ</code> as defined in <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601.</a></td>
+</tr>
+<tr>
+<td>customData</td>
+<td>Map</td>
+<td>Custom variables that have been assigned in the widget setup page.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String</td>
+<td>Optional field that the user fills in in case he wishes to be contacted.</td>
+</tr>
+<tr>
+<td>labels</td>
+<td>Map</td>
+<td>An array of labels that have been assigned to the feedback item.</td>
+</tr>
+<tr>
+<td>nps</td>
+<td>Integer</td>
+<td>The Net Promoter Score given by the user (0-10).</td>
+</tr>
+<tr>
+<td>rating</td>
+<td>Integer</td>
+<td>Rating given by the user (0-5).</td>
+</tr>
+<tr>
+<td>buttonId</td>
+<td>String</td>
+<td>The source widget of the feedback item.</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Array</td>
+<td>An array of tags assigned to the feedback item.</td>
+</tr>
+<tr>
+<td>urlParams</td>
+<td>Map</td>
+<td>The URL parameters passed via the feedback URL.</td>
+</tr>
+</tbody></table>
+<h1 id='usabilla-for-apps'>Usabilla for Apps</h1>
+<p>Usabilla for Apps is a real-time user feedback system for analysis of customer experience on your mobile applications. This section covers the resources that can be requested regarding the Usabilla for Apps product.</p>
+<h2 id='get-app-forms'>Get App Forms</h2><pre class="highlight javascript tab-javascript"><code><span class="o">**</span>
+ <span class="o">*</span> <span class="nx">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="nx">Access</span> <span class="nx">Key</span>
+ <span class="o">*</span> <span class="nx">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="nx">Secret</span> <span class="nx">Key</span>
+ <span class="o">*</span><span class="sr">/</span><span class="err">
+</span><span class="kr">const</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'yargs'</span><span class="p">).</span><span class="nx">argv</span><span class="p">.</span><span class="nx">_</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">Usabilla</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../dist/api-js-node'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">usabilla</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Usabilla</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+<span class="c1">// Get all apps forms for this account.</span>
+<span class="nx">usabilla</span><span class="p">.</span><span class="nx">apps</span><span class="p">.</span><span class="nx">forms</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">appsForms</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">appsForm</span> <span class="o">=</span> <span class="nx">appsForms</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">appsForm</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">usabilla</span> <span class="k">as</span> <span class="n">ub</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="c"># Create an API client with access key and secret key</span>
+    <span class="n">api</span> <span class="o">=</span> <span class="n">ub</span><span class="o">.</span><span class="n">APIClient</span><span class="p">(</span><span class="s">'YOUR-ACCESS-KEY'</span><span class="p">,</span> <span class="s">'YOUR-SECRET-KEY'</span><span class="p">)</span>
+
+    <span class="c"># Set the limit of buttons to retrieve to 1</span>
+    <span class="k">if</span> <span class="bp">False</span><span class="p">:</span>
+        <span class="n">api</span><span class="o">.</span><span class="n">set_query_parameters</span><span class="p">({</span><span class="s">'limit'</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+
+    <span class="c"># Set a limit for last 7 days</span>
+    <span class="c"># NB: You might need to convert the since_unix calculation from scientific notation or set the since parameter manually</span>
+    <span class="k">if</span> <span class="bp">False</span><span class="p">:</span>
+        <span class="n">epoch</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">1970</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">since</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+        <span class="n">since_unix</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span> <span class="o">-</span> <span class="n">since</span> <span class="o">-</span> <span class="n">epoch</span><span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span>
+        <span class="n">api</span><span class="o">.</span><span class="n">set_query_parameters</span><span class="p">({</span><span class="s">'since'</span><span class="p">:</span> <span class="n">since_unix</span><span class="p">})</span>
+
+    <span class="c"># Get all apps forms for this account</span>
+    <span class="n">forms</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_resource</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">SCOPE_LIVE</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">PRODUCT_APPS</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">RESOURCE_APP</span><span class="p">)</span>
+    <span class="n">first_form</span> <span class="o">=</span> <span class="n">forms</span><span class="p">[</span><span class="s">'items'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">print</span> <span class="n">first_form</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="c">// Under construction</span><span class="x">
+</span></code></pre><pre class="highlight php tab-php"><code>// Under construction
+</code></pre>
+<blockquote>
+<p>The data will be received in JSON format like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-22T13:34:07.043Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"53f746cfc469889e628b4568"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New untitled App Form"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Each App has a feedback button placed somewhere in the mobile application. App users can click on the feedback button at any time in order to give feedback. The feedback form (App Form) is initialized in the mobile application by calling the Usabilla SDK with the Form ID. </p>
+<h3 id='https-request-10'>HTTPS Request</h3>
+<p><code>https://data.usabilla.com/live/apps</code></p>
+
+<p>This request returns a list of your App Forms that are created in your Usabilla account. </p>
+<h3 id='request-example-10'>Request example</h3>
+<p><code>https://data.usabilla.com/live/apps?limit=1</code></p>
+<h3 id='parameter-9'>Parameter</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Optional URL query parameter that limits the number of retrieved results between 1 and 100. Defaults to 100 when omitted.</td>
+</tr>
+<tr>
+<td>since</td>
+<td>Timestamp</td>
+<td>Optional UTC Timestamp (in milliseconds) URL query parameter used to retrieve items of which creation date is after the supplied value.</td>
+</tr>
+</tbody></table>
+<h3 id='success-200-11'>Success 200</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unique identifier of the Form. 24 characters long.</td>
+</tr>
+<tr>
+<td>date</td>
+<td>Date</td>
+<td>The creation date of the Form, in UTC. The format being used is <code>%Y-%m-%dT%H:%M:%S.%fZ</code> as defined in <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601.</a></td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>The name of the Form.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>The status the Form.</td>
+</tr>
+</tbody></table>
+<h2 id='get-form-feedback'>Get Form Feedback</h2><pre class="highlight javascript tab-javascript"><code><span class="cm">/**
+ * argv[0] Access Key
+ * argv[1] Secret Key
+ */</span>
+<span class="kr">const</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'yargs'</span><span class="p">).</span><span class="nx">argv</span><span class="p">.</span><span class="nx">_</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">Usabilla</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../dist/api-js-node'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">usabilla</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Usabilla</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+<span class="c1">// Get all apps forms for this account.</span>
+<span class="nx">usabilla</span><span class="p">.</span><span class="nx">apps</span><span class="p">.</span><span class="nx">forms</span>
+  <span class="p">.</span><span class="nx">get</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">appsForms</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">appsForm</span> <span class="o">=</span> <span class="nx">appsForms</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">appsForm</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Get the feedback for a apps form with id.</span>
+    <span class="kd">let</span> <span class="nx">appsQuery</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">id</span><span class="p">:</span> <span class="nx">appsForm</span><span class="p">.</span><span class="nx">id</span>
+    <span class="p">};</span>
+
+    <span class="c1">// Get the feedback of the second app form</span>
+    <span class="nx">usabilla</span><span class="p">.</span><span class="nx">apps</span><span class="p">.</span><span class="nx">forms</span><span class="p">.</span><span class="nx">feedback</span>
+      <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">appsQuery</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">feedback</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'# apps feedback'</span><span class="p">,</span> <span class="nx">feedback</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">reason</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">reason</span><span class="p">);</span>
+      <span class="p">});</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">reason</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// If the usabilla call fails, we want to see the error message</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">reason</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">usabilla</span> <span class="k">as</span> <span class="n">ub</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="c"># Create an API client with access key and secret key</span>
+    <span class="n">api</span> <span class="o">=</span> <span class="n">ub</span><span class="o">.</span><span class="n">APIClient</span><span class="p">(</span><span class="s">'YOUR-ACCESS-KEY'</span><span class="p">,</span> <span class="s">'YOUR-SECRET-KEY'</span><span class="p">)</span>
+
+    <span class="c"># Set the limit of buttons to retrieve to 1</span>
+    <span class="k">if</span> <span class="bp">False</span><span class="p">:</span>
+        <span class="n">api</span><span class="o">.</span><span class="n">set_query_parameters</span><span class="p">({</span><span class="s">'limit'</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+
+    <span class="c"># Set a limit for last 7 days</span>
+    <span class="c"># NB: You might need to convert the since_unix calculation from scientific notation or set the since parameter manually</span>
+    <span class="k">if</span> <span class="bp">False</span><span class="p">:</span>
+        <span class="n">epoch</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">1970</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">since</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+        <span class="n">since_unix</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span> <span class="o">-</span> <span class="n">since</span> <span class="o">-</span> <span class="n">epoch</span><span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span>
+        <span class="n">api</span><span class="o">.</span><span class="n">set_query_parameters</span><span class="p">({</span><span class="s">'since'</span><span class="p">:</span> <span class="n">since_unix</span><span class="p">})</span>
+
+    <span class="c"># Get all apps forms for this account</span>
+    <span class="n">forms</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_resource</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">SCOPE_LIVE</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">PRODUCT_APPS</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">RESOURCE_APP</span><span class="p">)</span>
+    <span class="n">first_form</span> <span class="o">=</span> <span class="n">forms</span><span class="p">[</span><span class="s">'items'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">print</span> <span class="n">first_form</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span>
+
+    <span class="c"># Get the feedback of the first app form</span>
+    <span class="n">feedback</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_resource</span><span class="p">(</span>
+        <span class="n">api</span><span class="o">.</span><span class="n">SCOPE_LIVE</span><span class="p">,</span>
+        <span class="n">api</span><span class="o">.</span><span class="n">PRODUCT_APPS</span><span class="p">,</span>
+        <span class="n">api</span><span class="o">.</span><span class="n">RESOURCE_FEEDBACK</span><span class="p">,</span>
+        <span class="n">first_form</span><span class="p">[</span><span class="s">'id'</span><span class="p">],</span>
+        <span class="n">iterate</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">print</span> <span class="nb">len</span><span class="p">([</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">feedback</span><span class="p">])</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="c">// Under construction</span><span class="x">
+</span></code></pre><pre class="highlight php tab-php"><code>// Under construction
+</code></pre>
+<blockquote>
+<p>The data will be received in JSON format like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"appId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"53f746cfc469889e628b4568"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"appName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Usabilla Test Frame"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"appVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"batteryLevel"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WiFi"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"custom_variable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"one"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"shaken"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"786690"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pablo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nps"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"speed"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Compliment"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-20T08:12:13.382Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"deviceName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"iPhone Simulator"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"freeMemory"</span><span class="p">:</span><span class="w"> </span><span class="mi">224776</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"freeStorage"</span><span class="p">:</span><span class="w"> </span><span class="mi">131880204</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"geoLocation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NL"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amsterdam"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">52.35</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.9167</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5534b4dcea5b09b33557bb20"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ipAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"80.101.117.33"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amsterdam, Netherlands"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"orientation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Portrait"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"osName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ios"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"osVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8.3"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rooted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"screenshot"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://usabilla-feedback-app.s3.amazonaws.com/staging/media/55/34/5534b4dcea5b09b33557bb20/screenshot"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"screensize"</span><span class="p">:</span><span class="w"> </span><span class="s2">"320x568"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1429517532"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"totalMemory"</span><span class="p">:</span><span class="w"> </span><span class="mi">14032256</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"totalStorage"</span><span class="p">:</span><span class="w"> </span><span class="mi">243924992</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>After the user sends feedback using the feedback button it becomes a feedback item that you can view in your Usabilla dashboard.</p>
+<h3 id='https-request-11'>HTTPS Request</h3>
+<p><code>https://data.usabilla.com/live/apps/&lt;id&gt;/feedback</code></p>
+
+<p>This request returns a list of your feedback items that are connected to a specific App Form. The App Form is loaded in from the Usabilla SDK once a user clicks on the feedback button in the application.</p>
+<h3 id='request-example-11'>Request example</h3>
+<p><code>https://data.usabilla.com/live/apps/8d73568ac2be8d73568ac2be/feedback?limit=1&amp;since=1419340238645</code></p>
+<h3 id='parameter-10'>Parameter</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The Form ID. For feedback items of all Forms use <code>*</code> (asterisk) as value.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Optional URL query parameter that limits the number of retrieved results between 1 and 100. Defaults to 100 when omitted.</td>
+</tr>
+<tr>
+<td>since</td>
+<td>Timestamp</td>
+<td>Optional UTC Timestamp (in milliseconds) URL query parameter used to retrieve items of which creation date is after the supplied value.</td>
+</tr>
+</tbody></table>
+<h3 id='success-200-12'>Success 200</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unique identifier of the feedback item.</td>
+</tr>
+<tr>
+<td>date</td>
+<td>Date</td>
+<td>The creation date of the Form, in UTC. The format being used is <code>%Y-%m-%dT%H:%M:%S.%fZ</code> as defined in <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601.</a></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>String</td>
+<td>Date and time (Unix timestamp) when feedback was sent by the App.</td>
+</tr>
+<tr>
+<td>deviceName</td>
+<td>String</td>
+<td>Device name on which the app is running.</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Map</td>
+<td>Map containing the Feedback data (&quot;mood&quot; and &quot;nps&quot; scores).</td>
+</tr>
+<tr>
+<td>customData</td>
+<td>Map</td>
+<td>Map containing the optionally configured custom values.</td>
+</tr>
+<tr>
+<td>appId</td>
+<td>String</td>
+<td>ID of the feedback form the feedback item belongs to.</td>
+</tr>
+<tr>
+<td>appName</td>
+<td>String</td>
+<td>Name of the feedback form</td>
+</tr>
+<tr>
+<td>appVersion</td>
+<td>String</td>
+<td>Version of the app.</td>
+</tr>
+<tr>
+<td>osName</td>
+<td>String</td>
+<td>Operating System name on which the app is running.</td>
+</tr>
+<tr>
+<td>osVersion</td>
+<td>String</td>
+<td>Operating System version on which the app is running.</td>
+</tr>
+<tr>
+<td>location</td>
+<td>String</td>
+<td>Readable location (City, Country).</td>
+</tr>
+<tr>
+<td>geoLocation</td>
+<td>Map</td>
+<td>Geographic location details (&quot;country&quot;, &quot;region&quot;, &quot;city&quot;, &quot;lat&quot;, &quot;lon&quot;).</td>
+</tr>
+<tr>
+<td>freeMemory</td>
+<td>Integer</td>
+<td>Bytes of RAM left unused.</td>
+</tr>
+<tr>
+<td>totalMemory</td>
+<td>Integer</td>
+<td>Bytes of RAM in total.</td>
+</tr>
+<tr>
+<td>freeStorage</td>
+<td>Integer</td>
+<td>Bytes of storage memory left unused.</td>
+</tr>
+<tr>
+<td>totalStorage</td>
+<td>Integer</td>
+<td>Bytes of storage memory in total.</td>
+</tr>
+<tr>
+<td>screenshot</td>
+<td>String</td>
+<td>Screenshot URL.</td>
+</tr>
+<tr>
+<td>screensize</td>
+<td>String</td>
+<td>Screen property size.</td>
+</tr>
+<tr>
+<td>connection</td>
+<td>String</td>
+<td>Current connections.</td>
+</tr>
+<tr>
+<td>ipAddress</td>
+<td>String</td>
+<td>Current IP address.</td>
+</tr>
+<tr>
+<td>language</td>
+<td>String</td>
+<td>Language used.</td>
+</tr>
+<tr>
+<td>orientation</td>
+<td>String</td>
+<td>The orientation of the screen at time of feedback [&#39;Portrait&#39;,&#39;Landscape&#39;].</td>
+</tr>
+<tr>
+<td>batteryLevel</td>
+<td>Float32</td>
+<td>Battery level from 0.0 to 1.0 (-1 means unknown).</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">Node.js</a>
+                <a href="#" data-language-name="python">Python</a>
+                <a href="#" data-language-name="go">Go</a>
+                <a href="#" data-language-name="php">PHP</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
