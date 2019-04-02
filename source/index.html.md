@@ -261,15 +261,6 @@ CredentialScope + <br>
 HashedCanonicalRequest<br>
 </code>
 
-**Example string to sign:**
-
-<code>
-    USBL1-HMAC-SHA256<br>
-    20150112T135139Z<br>
-    20150112/usbl1_request<br>
-    daf6b02d8ae6809bf3b2445c480c1ee6038da1a19a2bd5ad21b7a30acd0fdec2
-</code>
-
 **Example HTTPS request:**
 
 <code>
@@ -303,11 +294,20 @@ HashedCanonicalRequest<br>
 
     The date must be in the YYYYMMDD format. Note that the date does not include a time value.
 
-4.  Append the hash of the canonical request that you created in task 1; <a href="#create-canonical-request">Create a Canonical Request</a>. This value is not followed by a newline character. The hashed canonical request must be lowercase base-16 encoded, as defined by <a href="https://tools.ietf.org/html/rfc4648#section-8">Section 8 of RFC 4648</a>.
+4.  Append the hash of the canonical request that you created in task 1; [Create a canonical Request](#1-create-a-canonical-request). This value is not followed by a newline character. The hashed canonical request must be lowercase base-16 encoded, as defined by [Section 8 of RFC 4648](https://tools.ietf.org/html/rfc4648#section-8).
 
     <code>
     daf6b02d8ae6809bf3b2445c480c1ee6038da1a19a2bd5ad21b7a30acd0fdec2
     </code>
+
+**Example string to sign:**
+
+<code>
+    USBL1-HMAC-SHA256<br>
+    20150112T135139Z<br>
+    20150112/usbl1_request<br>
+    daf6b02d8ae6809bf3b2445c480c1ee6038da1a19a2bd5ad21b7a30acd0fdec2
+</code>
 
 ## 3. Calculate the Signature
 
@@ -353,11 +353,18 @@ After you have calculated the signature, add it to the Authorization header of y
 
 The following pseudocode shows the construction of the Authorization header:
 
-<code>Authorization: algorithm Credential=access key ID/credential scope, SignedHeaders=SignedHeaders, Signature=signature</code>
+<code>Authorization: algorithm <br>
+Credential=access key ID/credential scope, <br>
+SignedHeaders=SignedHeaders, <br>
+Signature=signature</code>
 
 The following example shows a finished Authorization header:
 
-<code>Authorization: USBL1-HMAC-SHA256 Credential=AccessKey/20130524/usbl1_request, SignedHeaders=date;host;user-agent, Signature=fe5f80f77d5fa3beca038a248ff027d0445342fe2855ddc963176630326f1024</code>
+<code>Authorization: USBL1-HMAC-SHA256 <br>
+Credential=AccessKey/20130524/usbl1_request,<br>
+SignedHeaders=date;host;user-agent,<br>
+Signature=fe5f80f77d5fa3beca038a248ff027d0<br>
+445342fe2855ddc963176630326f1024</code>
 
 **Note the following:**
 
