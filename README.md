@@ -28,9 +28,10 @@ Now that API doc is all set up on your machine, you'll probably want to learn mo
 If you'd prefer to use Docker, instructions are available [in the wiki](https://github.com/lord/slate/wiki/Docker).
 
 ### Publishing Usabilla API doc
-1. Commit your changes to the markdown source: git commit -a -m "Update index.md"
-2. Push the markdown source changes to GitHub: git push
-3. Run ./deploy.sh
+1. Run ./deploy.sh
+2. Commit your changes to the markdown source: git commit -a -m "Update index.md"
+3. Push the markdown source changes to GitHub: git push
+
 
 ### Note on JavaScript Runtime
 
