@@ -374,6 +374,8 @@ Signature=fe5f80f77d5fa3beca038a248ff027d0<br>
 
 #Request URL structure
 
+This section covers the resources that can be requested.
+
 `https://data.usabilla.com/live/<product-name>/<resource-type>/<id>/<nested-resource>?params`
 
 ### Parameters
@@ -708,8 +710,8 @@ After a visitor leaves feedback on a button it becomes a feedback item that cons
 | --------- | ------- | ----------------------------------------------------------------------------------- |
 | id        | String  | Unique identifier of the feedback item.                       |
 |userAgent	|String | Information about the browser's user-agent.|
-|comment	|String	|Commentary left by the user in the feedback form.|
-|commentTranslated|	String	|The translated version of the commentary left by the user.|
+|comment	|String	|Comment given by the user in the feedback form.|
+|commentTranslated|	String	|The translated version of the comment given by the user.|
 |commentTranslatedFrom|	String	| The language from which the translation was made.|
 |location|	String	|String containing geographical information about the location of the user based on the user's ip address.|
 |date	| Date	|The creation date of the feedback item, in UTC. The format being used is <code>%Y-%m-%dT%H:%M:%S.%fZ</code> as defined in [ISO 8601.](https://www.w3.org/TR/NOTE-datetime)|
@@ -815,10 +817,10 @@ This request returns a list of your Usabilla for Websites Campaigns.
 |date	|Date | The creation date of the campaign, in UTC. The format being used is <code>%Y-%m-%dT%H:%M:%S.%fZ</code> as defined in [ISO 8601.](https://www.w3.org/TR/NOTE-datetime)|
 |buttonId	|String	|The source button that triggers the campaign.|
 |analyticsId|	String	|Analytics ID.|
-|status|	String	| The status of the campaign. Possible values are <code>created, active, paused and finished</code>.|
+|status|	String	| The status of the campaign. Possible values are <code>created</code>, <code>active</code>, <code>paused</code> and <code>finished</code>.|
 |name|	String	|The name of the campaign given when created. Can be updated in the campaign setup page.|
 |type	| String	|The type of the campaign.|
-|url	| String	|The url of the campaign when the campaign is of type Survey, empty otherwise.|
+|url	| String	|The url of the campaign when the campaign is of type <code>Survey</code>, empty otherwise.|
 
 ##  Get Campaign Results
 
@@ -914,7 +916,7 @@ This request returns the responses of a campaign with a specific id.
 |campaignId	|String	|Unique identifier for the campaign it belongs to.|
 |userAgent  |String	|Information about the browser user agent.|
 |url  |String|Origin URL where the campaign result was registered.|
-|customData  |Map|Custom variables that have been assigned in the campaign setup page.|
+|customData  |Map|Custom variables that have been assigned to the campaign result.|
 |data|	Array	| An array containing the values of the campaign form fields.|
 |time|	Integer	| The amount of time the user has taken to complete the survey. Expressed in miliseconds.|
 |location|	String	|String containing geographical information about the location of the user based on the user's IP address.|
@@ -1000,7 +1002,7 @@ This request returns the statistics of a campaign with a specific id.
 
 ## In-Page
 
-This section is regarding the Usabilla In-Page product and how to retrieve the data. The In-Page widget can be placed anywhere on your webpage for users to give valuable feedback on the web content.
+This section is regarding the Usabilla In-Page product and how to retrieve the feedback data. The In-Page widget can be placed anywhere on your webpage for users to give valuable feedback on the web content.
 
 ##  Get In-Page Widgets
 
@@ -1045,7 +1047,7 @@ HTTP/1.1 200 OK
 
 `https://data.usabilla.com/live/websites/inpage`
 
-This request returns a list of your Usabilla for Websites in-page widgets.
+This request returns a list of your Usabilla for Websites In-Page widgets.
 
 ###Request example
 
@@ -1062,8 +1064,8 @@ This request returns a list of your Usabilla for Websites in-page widgets.
 
 | Field | Type | Description                                                                         |
 | --------- | ------- | ----------------------------------------------------------------------------------- |
-| id        | String  | Unique identifier for an in-page widget.                   |
-| date        | Date  | The creation date of the in-page widget, in UTC. The format being used is <code>%Y-%m-%dT%H:%M:%S.%fZ</code> as defined in [ISO 8601.](https://www.w3.org/TR/NOTE-datetime)        |
+| id        | String  | Unique identifier for an In-Page widget.                   |
+| date        | Date  | The creation date of the In-Page widget, in UTC. The format being used is <code>%Y-%m-%dT%H:%M:%S.%fZ</code> as defined in [ISO 8601.](https://www.w3.org/TR/NOTE-datetime)        |
 | name       | String | The name of the In-Page widget given when created. Can be updated in the In-Page widget setup page.  |
 
 ##  Get In-Page Feedback
@@ -1148,7 +1150,7 @@ HTTP/1.1 200 OK
 
 `https://data.usabilla.com/live/websites/inpage/<id>/feedback`
 
-This request returns a list of your Usabilla for Websites in-page widgets.
+This request returns a list of your Usabilla for Websites In-Page feedback.
 
 ###Request example
 
@@ -1158,7 +1160,7 @@ This request returns a list of your Usabilla for Websites in-page widgets.
 
 | Field | Type | Description                                                                         |
 | --------- | ------- | ----------------------------------------------------------------------------------- |
-| id        | String | The in-page widget id. Use <code>*</code> (asterisk) to request feedback of all in-page widgets.                                |
+| id        | String | The In-Page widget id. Use <code>*</code> (asterisk) to request feedback of all In-Page widgets.                                |
 | limit        | Integer  | Optional. URL query parameter that limits the number of retrieved results between 1 and 100. Defaults to 100 when omitted.                                |
 | since      | Timestamp  | Optional. UTC Timestamp (in milliseconds) URL query parameter used to retrieve items of which creation date is after the supplied value. |
 
@@ -1170,13 +1172,13 @@ This request returns a list of your Usabilla for Websites in-page widgets.
 | date        | Date  | The creation date of the in-page widget, in UTC. The format being used is <code>%Y-%m-%dT%H:%M:%S.%fZ</code> as defined in [ISO 8601.](https://www.w3.org/TR/NOTE-datetime)        |
 | data       | Array | An array containing the values of the In-Page widget form fields.  |
 | customData      | Array | An array containing the values of the widget's custom fields.  |
-| widgetId     | String | Unique identifier for the in-page widget it belongs. |
+| widgetId     | String | Unique identifier for the In-Page widget it belongs. |
 | mood    | Integer | Mood given by the user (0-5). |
 | rating   | Float32 | Rating from 0.0 to 1.0. |
 | nps   | Integer | The Net Promoter Score given by the user (0-10).|
-| comment   | String | Commentary left by the user in the feedback form.|
+| comment   | String | Comment given by the user in the feedback form.|
 | userAgent  | String | Information about the browser user agent.|
-| url  | String | Origin URL where the in-page widget result was registered.|
+| url  | String | Origin URL where the In-Page widget result was registered.|
 | geo  | Map | Geographic location of user, consisting of <code>city</code>, <code>country</code> and <code>region</code>.|
 
 # Usabilla for Email
@@ -1274,7 +1276,7 @@ This request returns a list of your email widgets
 
 ##  Get Email Feedback
 
-After the reader leaves feedback on a widget it becomes a feedback item that you can view in your Usabilla dashboard.
+After the reader leaves feedback on an email widget it becomes a feedback item that you can view in your Usabilla account.
 
 ```javascript
 /**
@@ -1384,7 +1386,7 @@ This request returns a list of your email widget feedback.
 
 | Field | Type | Description                                                                         |
 | --------- | ------- | ----------------------------------------------------------------------------------- |
-| id       | 	String  | The widget id. If you wish to get all available feedback items use * (asterisk) as value.         |
+| id       | 	String  | The widget id. If you wish to get all available feedback items use <code>*</code>  (asterisk) as value.         |
 | limit        | Integer  | Optional URL query parameter that limits the number of retrieved results between 1 and 100. Defaults to 100 when omitted.                                |
 | since      | Timestamp  | Optional UTC Timestamp (in milliseconds) URL query parameter used to retrieve items of which creation date is after the supplied value. |
 
@@ -1486,7 +1488,7 @@ Each App has a feedback button placed somewhere in the mobile application. App u
 
 `https://data.usabilla.com/live/apps`
 
-This request returns a list of your App Forms that are created in your Usabilla account. 
+This request returns a list of your App Forms that are created in your Usabilla dashboard. 
 
 ###Request example
 
